@@ -1,6 +1,5 @@
 // use ds_and_algorithms::algorithms::{binary_search, linear_search};
 use ds_and_algorithms::algorithms::Algorithms;
-use std::io::{self, Stdin};
 
 fn main() {
     // println!(" ---------- Bienvendio ");

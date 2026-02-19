@@ -1,5 +1,3 @@
-use std::vec;
-
 pub struct Algorithms;
 
 impl Algorithms {
