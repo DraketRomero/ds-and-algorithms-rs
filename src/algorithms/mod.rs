@@ -113,4 +113,47 @@ impl Algorithms {
 
         return vector;
     }
+
+    // * Version implementada identica a la del libro
+    pub fn insertion_sort<T>(vector: &mut Vec<T>) -> &mut Vec<T>
+    where
+        T: PartialEq + PartialOrd + Clone,
+    {
+        for index in 1..vector.len() {
+            let temp_value: T = vector[index].clone();
+            let mut position: i64 = (index - 1) as i64;
+
+            while position >= 0 {
+                if vector[position as usize] > temp_value {
+                    vector[(position + 1) as usize] = vector[position as usize].clone();
+                    position -= 1;
+                } else {
+                    break;
+                }
+            }
+            vector[(position + 1) as usize] = temp_value;
+        }
+
+        vector
+    }
+
+    // * Version corregida
+    // pub fn insertion_sort<T>(vector: &mut Vec<T>) -> &mut Vec<T>
+    // where
+    //     T: PartialEq + PartialOrd + Clone,
+    // {
+    //     for index in 1..vector.len() {
+    //         let temp_value: T = vector[index].clone();
+    //         let mut position = index;
+
+    //         while position > 0 && vector[position - 1] > temp_value {
+    //             vector[position] = vector[position - 1].clone();
+    //             position -= 1;
+    //         }
+
+    //         vector[position] = temp_value;
+    //     }
+
+    //     vector
+    // }
 }
