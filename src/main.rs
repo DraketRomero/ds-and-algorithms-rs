@@ -1,4 +1,3 @@
-// use ds_and_algorithms::algorithms::{binary_search, linear_search};
 use ds_and_algorithms::algorithms::Algorithms;
 
 fn main() {
@@ -41,6 +40,12 @@ fn main() {
     let mut vector = vec![20, 80, 75, 5, 9, 3, 14];
     println!("Array original: {:?}", vector.clone());
     println!("Array ordenado con selection sort: {:?}", Algorithms::selection_sort(&mut vector));
+
+    // * Implementacion del algoritmo insertion sort
+    println!("\n ------- Implementacion del algoritmo insertion sort --------- ");
+    let mut vector = vec![2, 4, 7, 1, 3];
+    println!("Array original: {:?}", vector.clone());
+    println!("Array ordenado con insertion sort: {:?}", Algorithms::insertion_sort(&mut vector));
     println!("\n");
 }
 
