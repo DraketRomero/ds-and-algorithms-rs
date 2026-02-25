@@ -22,3 +22,24 @@ pub fn intersection(array1: &Vec<i32>, array2: &Vec<i32>) -> Vec<i32> {
 
     new_arrray
 }
+
+/*
+ * Write a function that accepts an array of strings and returns the first duplicate value it finds.
+ * For example, if the array is ['a', 'b', 'c', 'd', 'c', 'e', 'f'], the function should return 'c', since it's duplicated within the array. (You can assume that there's one pair of duplicates within the array.)
+ * Make sure the function has an efficienty of O(N).
+ */
+
+pub fn get_duplicates(letters: &Vec<&str>) -> Vec<String> {
+    let mut new_arrray: Vec<String> = Vec::new();
+    let mut duplicates: HashMap<String, i32> = HashMap::new();
+
+    for i in 1..letters.len() - 1 {
+        if duplicates.get(&letters[i].to_string()) == Some(&1) {
+            new_arrray.push(letters[i].to_string());
+        }
+
+        duplicates.insert(letters[i].to_string(), 1);
+    }
+
+    new_arrray
+}
