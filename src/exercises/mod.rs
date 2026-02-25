@@ -7,3 +7,10 @@ pub fn test_exercise_1_ch8() {
     println!("Los valores del primer array son: {:?} \nY los del segundo son: {:?}\n", arr, arr2);
     println!("Los elementos que cumplen la interseccion son: {:?}", chapter_8::intersection(&arr, &arr2))
 }
+
+pub fn test_exercise_2_ch8() {
+    let arr = vec!["a", "b", "c", "d", "c", "e", "f"];
+
+    println!("\nLos valores del array son: {:?}", arr);
+    println!("Los elementos duplicados son: {:?}", chapter_8::get_duplicates(&arr))
+}
