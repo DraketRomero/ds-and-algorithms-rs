@@ -21,3 +21,10 @@ pub fn test_exercise_3_ch8() {
     println!("\nEl texto a comprobar es: {}", text);
     println!("La letra faltante es: {}", chapter_8::missing_letter(text))
 }
+
+pub fn test_exercise_4_ch8() {
+    let text = String::from("minimum");
+
+    println!("\nEl texto a comprobar es: {}", text);
+    println!("La primera letra no duplicada es: {}", chapter_8::first_non_duplicated(text))
+}
