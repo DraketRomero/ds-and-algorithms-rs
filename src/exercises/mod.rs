@@ -14,3 +14,10 @@ pub fn test_exercise_2_ch8() {
     println!("\nLos valores del array son: {:?}", arr);
     println!("Los elementos duplicados son: {:?}", chapter_8::get_duplicates(&arr))
 }
+
+pub fn test_exercise_3_ch8() {
+    let text = String::from("the quick brown box jumps over a lazy dog");
+
+    println!("\nEl texto a comprobar es: {}", text);
+    println!("La letra faltante es: {}", chapter_8::missing_letter(text))
+}
