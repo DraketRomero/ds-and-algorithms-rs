@@ -65,3 +65,21 @@ pub fn missing_letter(text: String) -> String {
         .map(|(&c, _)| c.to_string())
         .unwrap_or_default()
 }
+
+/*
+ * Write a function that returns the first non-duplicated character in a string.
+ * For example, the string, "minimum" has two characters that only exists once - the "n" and the "u", so your function should return the "n", since it ocurrs first.
+ * The function should have an eficiency of O(N)
+ */
+pub fn first_non_duplicated(text: String) -> String {
+    let mut duplicateds: HashMap<char, i32> = HashMap::new();
+
+    for character in text.chars() {
+        *duplicateds.entry(character).or_insert(0) += 1;
+    }
+
+    text.chars()
+        .find(|c| duplicateds.get(c) == Some(&1))
+        .map(|c| c.to_string())
+        .unwrap_or_default()
+}
