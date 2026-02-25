@@ -43,3 +43,25 @@ pub fn get_duplicates(letters: &Vec<&str>) -> Vec<String> {
 
     new_arrray
 }
+
+/*
+ * Write a function that accepts a string that contains all the letters of the alphabeth except one and returns the missing letter.
+ * For example, the string "the quick brown box jumps over a lazy dog" contains all the letters of the alphabet except the letter "f".
+ * The function should have a time complexity of O(N).
+ */
+
+pub fn missing_letter(text: String) -> String {
+    let mut alphabet: HashMap<char, bool> = ('a'..='z').map(|c| (c, false)).collect();
+
+    for character in text.chars() {
+        if alphabet.contains_key(&character) {
+            alphabet.insert(character, true);
+        }
+    }
+
+    alphabet
+        .iter()
+        .find(|(_, found)| !**found)
+        .map(|(&c, _)| c.to_string())
+        .unwrap_or_default()
+}
