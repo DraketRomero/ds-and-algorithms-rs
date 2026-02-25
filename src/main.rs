@@ -1,4 +1,5 @@
 use ds_and_algorithms::algorithms::Algorithms;
+use ds_and_algorithms::exercises::{test_exercise_1_ch8, test_exercise_2_ch8, test_exercise_3_ch8, test_exercise_4_ch8};
 
 fn main() {
     // println!(" ---------- Bienvendio ");
