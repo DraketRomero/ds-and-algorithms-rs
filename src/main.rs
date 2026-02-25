@@ -1,7 +1,7 @@
 use ds_and_algorithms::algorithms::Algorithms;
 use ds_and_algorithms::exercises::{test_exercise_1_ch8, test_exercise_2_ch8, test_exercise_3_ch8, test_exercise_4_ch8};
 
-fn main() {
+fn test_algorithms() {
     // println!(" ---------- Bienvendio ");
     // let mut user_input = String::new();
     // let res = match read_input(&mut user_input) {
@@ -48,6 +48,17 @@ fn main() {
     println!("Array original: {:?}", vector.clone());
     println!("Array ordenado con insertion sort: {:?}", Algorithms::insertion_sort(&mut vector));
     println!("\n");
+}
+
+fn test_exercises() {
+    test_exercise_1_ch8();
+    test_exercise_2_ch8();
+    test_exercise_3_ch8();
+    test_exercise_4_ch8();
+}
+fn main() {
+    test_algorithms();
+    test_exercises();
 }
 
 // fn read_input(user_input: &mut String) -> Result<usize, io::Error> {
