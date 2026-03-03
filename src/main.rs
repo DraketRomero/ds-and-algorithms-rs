@@ -1,9 +1,11 @@
 use ds_and_algorithms::algorithms::Algorithms;
+use ds_and_algorithms::ds::queue::{Queue, QueueTrait};
 use ds_and_algorithms::ds::stack::{Stack, StackTrait};
 use ds_and_algorithms::exercises::{
-    test_exercise_1_ch8, test_exercise_2_ch8, test_exercise_3_ch8, test_exercise_4_ch8,
+    factorial, test_exercise_1_ch8, test_exercise_2_ch8, test_exercise_3_ch8, test_exercise_4_ch8, test_exercise_4_ch10
 };
-use ds_and_algorithms::examples::test_linter;
+use ds_and_algorithms::examples::{test_exercise_launch_starcraft_ch10, test_find_directories, test_linter, test_print_manager};
+use ds_and_algorithms::exercises::test_exercise_4_chapter_9;
 
 fn test_algorithms() {
     // println!(" ---------- Bienvendio ");
@@ -70,23 +72,49 @@ fn test_algorithms() {
 }
 
 fn test_exercises() {
-    test_exercise_1_ch8();
-    test_exercise_2_ch8();
-    test_exercise_3_ch8();
-    test_exercise_4_ch8();
+    // test_exercise_1_ch8();
+    // test_exercise_2_ch8();
+    // test_exercise_3_ch8();
+    // test_exercise_4_ch8();
+
+    // test_exercise_4_chapter_9();
+    // test_exercise_launch_starcraft_ch10();
+    
+    // println!("El numero es: {}\n", factorial(10));
+
+    test_exercise_4_ch10();
 }
 
 fn test_ds() {
+    println!("\n ------- Implementacion de una pila --------- ");
     let mut stack: Stack<i32> = Stack::new();
     stack.push(4);
     stack.push(5);
     stack.push(7);
-
+    
     println!("{:?}", stack.pop());
+    
+    println!("\n ------- Implementacion de una cola --------- ");
+    let mut queue: Queue<i32> = Queue::new();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    
+    println!("{:?}", queue.dequeue());
 }
 
 fn test_examples() {
+    println!("\n ------- Prueba del ejemplo del linter con una pila --------- ");
     test_linter();
+
+    println!("\n ------- Prueba del ejemplo de con una cola--------- ");
+    test_print_manager();
+    
+    println!("\n ------- Prueba del ejemplo de lectura de archivos recursividad--------- ");
+    test_find_directories();
+
+    println!("\n ------- Prueba del ejemplo de lanzamiento de cohete --------- ");
+    test_exercise_launch_starcraft_ch10();
 }
 
 fn main() {
