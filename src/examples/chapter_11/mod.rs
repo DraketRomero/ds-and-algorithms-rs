@@ -51,7 +51,7 @@ pub fn factorial_with_recursion(n: usize, i: Option<usize>, product: Option<usiz
  * Top-down recursion
  * Es una estrategia mental para la resolucion de problemas de recursividad, donde se enfoca uno en resolver el problema en el siguiente proceso:
  * 1.- Imagina que la funcion ya fue implementada por alguien mas.
- * 2.- Identifica el problema del subproblema
+ * 2.- Identifica el subproblema del problema
  * 3.- Mira que pasa cuando llamas a la funcion en el subproblema y parte de ahi.
  *
  * Ejemplo 1: Array sum - Sumar todos los valores de un array.
