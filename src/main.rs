@@ -2,9 +2,9 @@ use ds_and_algorithms::algorithms::Algorithms;
 use ds_and_algorithms::ds::queue::{Queue, QueueTrait};
 use ds_and_algorithms::ds::stack::{Stack, StackTrait};
 use ds_and_algorithms::exercises::{
-    factorial, test_exercise_1_ch8, test_exercise_2_ch8, test_exercise_3_ch8, test_exercise_4_ch8, test_exercise_4_ch10
+    factorial, test_exercise_1_ch8, test_exercise_1_ch11, test_exercise_2_ch8, test_exercise_2_ch11, test_exercise_3_ch8, test_exercise_3_ch11, test_exercise_4_ch8, test_exercise_4_ch10, test_exercise_4_ch11, test_exercise_5_ch11
 };
-use ds_and_algorithms::examples::{test_exercise_launch_starcraft_ch10, test_find_directories, test_linter, test_print_manager};
+use ds_and_algorithms::examples::{test_exercise_launch_starcraft_ch10, test_exercises_ch11, test_find_directories, test_linter, test_print_manager};
 use ds_and_algorithms::exercises::test_exercise_4_chapter_9;
 
 fn test_algorithms() {
@@ -82,7 +82,22 @@ fn test_exercises() {
     
     // println!("El numero es: {}\n", factorial(10));
 
-    test_exercise_4_ch10();
+    // test_exercise_4_ch10();
+
+    println!("\n ------- Solucion al ejercicio 1 del capitulo 11 --------- ");
+    test_exercise_1_ch11();
+
+    println!("\n ------- Solucion al ejercicio 2 del capitulo 11 --------- ");
+    test_exercise_2_ch11();
+
+    println!("\n ------- Solucion al ejercicio 3 del capitulo 11 --------- ");
+    test_exercise_3_ch11();
+
+    println!("\n ------- Solucion al ejercicio 4 del capitulo 11 --------- ");
+    test_exercise_4_ch11();
+
+    println!("\n ------- Solucion al ejercicio 5 del capitulo 11 --------- ");
+    test_exercise_5_ch11();
 }
 
 fn test_ds() {
@@ -115,13 +130,15 @@ fn test_examples() {
 
     println!("\n ------- Prueba del ejemplo de lanzamiento de cohete --------- ");
     test_exercise_launch_starcraft_ch10();
+
+    test_exercises_ch11();
 }
 
 fn main() {
     // test_algorithms();
-    // test_exercises();
+    test_exercises();
     // test_ds();
-    test_examples();
+    // test_examples();
 }
 
 // fn read_input(user_input: &mut String) -> Result<usize, io::Error> {
