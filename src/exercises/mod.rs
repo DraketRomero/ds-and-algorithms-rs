@@ -1,9 +1,11 @@
+pub mod chapter_11;
 pub mod chapter_10;
 pub mod chapter_8;
 pub mod chapter_9;
 
 use crate::exercises::chapter_9::reverse_string;
 use crate::exercises::chapter_10::{Element, print_numbers_from_arrays};
+use crate::exercises::chapter_11::{count_characters, even_numbers, search_x, triangular_numbers, unique_paths};
 
 pub fn test_exercise_1_ch8() {
     let arr = vec![1, 2, 3, 4, 5, 6];
@@ -117,4 +119,32 @@ pub fn test_exercise_4_ch10() {
     ]);
 
     print_numbers_from_arrays(&[array]);
+}
+
+pub fn test_exercise_1_ch11() {
+    let letters = vec![String::from("ab"), String::from("c"), String::from("def"), String::from("ghij")];
+    println!("El total del letras es: {}", count_characters(letters));
+}
+
+pub fn test_exercise_2_ch11() {
+    let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    println!("Array original: {:?}\nArray con solo numeros pares: {:?}", numbers.clone(), even_numbers(numbers, &mut Vec::new()));
+}
+
+pub fn test_exercise_3_ch11() {
+    let level = 7;
+    println!("El valor correspondiente al nivel {} es: {}", &level, triangular_numbers(level, None, None));
+}
+
+pub fn test_exercise_4_ch11() {
+    let texto = String::from("abcdefghijklmnopqrlswxy");
+
+    match search_x(texto, None) {
+        Some(index) => println!("El indice de x se ubica en: {}", index),
+        None => println!("No se encontro el indice, el string esta vacio.") 
+    }
+}
+
+pub fn test_exercise_5_ch11() {
+    println!("Los pasos minimos para llegar al destino son: {}", unique_paths(6, 7));
 }
