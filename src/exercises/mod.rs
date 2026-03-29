@@ -1,13 +1,21 @@
-pub mod chapter_13;
-pub mod chapter_12;
-pub mod chapter_11;
+pub mod chapter_15;
+pub mod chapter_17;
+// pub mod chapter_14;
 pub mod chapter_10;
+pub mod chapter_11;
+pub mod chapter_12;
+pub mod chapter_13;
 pub mod chapter_8;
 pub mod chapter_9;
 
+use crate::exercises::chapter_8::{
+    first_non_duplicated, get_duplicates, intersection, missing_letter,
+};
 use crate::exercises::chapter_9::reverse_string;
 use crate::exercises::chapter_10::{Element, print_numbers_from_arrays};
-use crate::exercises::chapter_11::{count_characters, even_numbers, search_x, triangular_numbers, unique_paths};
+use crate::exercises::chapter_11::{
+    count_characters, even_numbers, search_x, triangular_numbers, unique_paths,
+};
 
 pub fn test_exercise_1_ch8() {
     let arr = vec![1, 2, 3, 4, 5, 6];
@@ -19,7 +27,7 @@ pub fn test_exercise_1_ch8() {
     );
     println!(
         "Los elementos que cumplen la interseccion son: {:?}",
-        chapter_8::intersection(&arr, &arr2)
+        intersection(&arr, &arr2)
     )
 }
 
@@ -27,17 +35,14 @@ pub fn test_exercise_2_ch8() {
     let arr = vec!["a", "b", "c", "d", "c", "e", "f"];
 
     println!("\nLos valores del array son: {:?}", arr);
-    println!(
-        "Los elementos duplicados son: {:?}",
-        chapter_8::get_duplicates(&arr)
-    )
+    println!("Los elementos duplicados son: {:?}", get_duplicates(&arr))
 }
 
 pub fn test_exercise_3_ch8() {
     let text = String::from("the quick brown box jumps over a lazy dog");
 
     println!("\nEl texto a comprobar es: {}", text);
-    println!("La letra faltante es: {}", chapter_8::missing_letter(text))
+    println!("La letra faltante es: {}", missing_letter(text))
 }
 
 pub fn test_exercise_4_ch8() {
@@ -46,7 +51,7 @@ pub fn test_exercise_4_ch8() {
     println!("\nEl texto a comprobar es: {}", text);
     println!(
         "La primera letra no duplicada es: {}",
-        chapter_8::first_non_duplicated(text)
+        first_non_duplicated(text)
     )
 }
 
@@ -124,18 +129,31 @@ pub fn test_exercise_4_ch10() {
 }
 
 pub fn test_exercise_1_ch11() {
-    let letters = vec![String::from("ab"), String::from("c"), String::from("def"), String::from("ghij")];
+    let letters = vec![
+        String::from("ab"),
+        String::from("c"),
+        String::from("def"),
+        String::from("ghij"),
+    ];
     println!("El total del letras es: {}", count_characters(letters));
 }
 
 pub fn test_exercise_2_ch11() {
     let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    println!("Array original: {:?}\nArray con solo numeros pares: {:?}", numbers.clone(), even_numbers(numbers, &mut Vec::new()));
+    println!(
+        "Array original: {:?}\nArray con solo numeros pares: {:?}",
+        numbers.clone(),
+        even_numbers(numbers, &mut Vec::new())
+    );
 }
 
 pub fn test_exercise_3_ch11() {
     let level = 7;
-    println!("El valor correspondiente al nivel {} es: {}", &level, triangular_numbers(level, None, None));
+    println!(
+        "El valor correspondiente al nivel {} es: {}",
+        &level,
+        triangular_numbers(level, None, None)
+    );
 }
 
 pub fn test_exercise_4_ch11() {
@@ -143,10 +161,13 @@ pub fn test_exercise_4_ch11() {
 
     match search_x(texto, None) {
         Some(index) => println!("El indice de x se ubica en: {}", index),
-        None => println!("No se encontro el indice, el string esta vacio.") 
+        None => println!("No se encontro el indice, el string esta vacio."),
     }
 }
 
 pub fn test_exercise_5_ch11() {
-    println!("Los pasos minimos para llegar al destino son: {}", unique_paths(6, 7));
+    println!(
+        "Los pasos minimos para llegar al destino son: {}",
+        unique_paths(6, 7)
+    );
 }
