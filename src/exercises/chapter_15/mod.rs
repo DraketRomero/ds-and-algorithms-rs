@@ -14,19 +14,19 @@
  */
 
 // ? Exercise 3 - Ch15
-pub fn find_greatest(&self) -> Option<&T> {
-    Self::find_greatest_node(&self.root)
-}
+// pub fn find_greatest(&self) -> Option<&T> {
+//     Self::find_greatest_node(&self.root)
+// }
 
-pub fn find_greatest_node<'a>(node: &'a Option<Box<TreeNode<T>>>) -> Option<&'a T> {
-    match node {
-        None => None,
-        Some(current) => match &current.right_child {
-            None => Some(&current.value),
-            Some(_) => Self::find_greatest_node(&current.right_child),
-        },
-    }
-}
+// pub fn find_greatest_node<'a>(node: &'a Option<Box<TreeNode<T>>>) -> Option<&'a T> {
+//     match node {
+//         None => None,
+//         Some(current) => match &current.right_child {
+//             None => Some(&current.value),
+//             Some(_) => Self::find_greatest_node(&current.right_child),
+//         },
+//     }
+// }
 
 /*
  ? Exercise 4 - Ch15
