@@ -6,10 +6,11 @@ pub mod chapter_11;
 pub mod chapter_12;
 pub mod chapter_13;
 pub mod chapter_14;
+pub mod chapter_20;
 
 use linter::{Linter, LinterTrait};
 
-use crate::{ds::node_base::double_linked_list::DoubleLinkedList, examples::{chapter_11::{anagrams_of, array_sum, count_x, double_value_in_array, factorial, factorial_with_recursion, number_of_paths, reverse}, chapter_12::{fib_rec, max_2n, max_n}, chapter_13::has_duplicate_value, chapter_14::Queue, count_down_spacecraft::count_down_spacecraft, find_directories::find_direrctories, print_manager::{PrintManager, PrintManagerTrait}}};
+use crate::{ds::node_base::double_linked_list::DoubleLinkedList, examples::{chapter_11::{anagrams_of, array_sum, count_x, double_value_in_array, factorial, factorial_with_recursion, number_of_paths, reverse}, chapter_12::{fib_rec, max_2n, max_n}, chapter_13::has_duplicate_value, chapter_14::Queue, chapter_20::{greedy_algorithms::{anagram_checker::{are_anagrams, are_anagrams_2}, group_sorting::group_array, increasing_triplet::increasing_triplet, max_sum::max_sum}, sum_swap::sum_swap, two_sum::{two_sum_v_n, two_sum_v_n_2, two_sum_v_n_with_array}}, count_down_spacecraft::count_down_spacecraft, find_directories::find_direrctories, print_manager::{PrintManager, PrintManagerTrait}}};
 
 pub fn test_linter() {
     let text = String::from("(var x = { y: [1, 2, 3]})");
@@ -119,4 +120,63 @@ pub fn test_example_ch14() {
     println!("El elemento eliminado es: {:?}", queue_with_double_linked_list.dequeue());
     queue_with_double_linked_list.read();
 
+}
+
+pub fn test_example_ch20() {
+    println!("------- Prueba ejercicio two_sum del capitulo 20 --------- ");
+    
+    let numbers = vec![2, 0, 4, 1, 7, 9];
+    println!("\nPrueba version 0(n^2): Valores: {:?}, Resultado: {}", &numbers, two_sum_v_n_2(numbers.clone()));
+    println!("\nPrueba version 0(n): Valores: {:?}, Resultado: {}", &numbers, two_sum_v_n(numbers.clone()));
+    println!("\nPrueba version 0(n) propia: Valores: {:?}, Resultado: {:?}", &numbers, two_sum_v_n_with_array(numbers.clone()));
+    
+    println!("\n------- Prueba ejercicio sum_swap del capitulo 20 --------- ");
+    let array_1 = vec![5, 3, 3, 7];
+    let array_2 = vec![4, 1, 1, 6];
+    println!("\nPrueba de la funcion: \nValores del array 1: {:?}\nValores del array 2: {:?}, \nResultado: {:?}", &array_1, &array_2, sum_swap(array_1.clone(), array_2.clone()));
+    
+    println!("\n------- Prueba ejercicio max_sum del capitulo 20 --------- ");
+    let greedly_numbers = vec![1, 1, 0, -3, 5];
+    println!("\n------- Ejemplo 1: --------- ");
+    println!("\nPrueba de la funcion: \nValores del array 1: {:?}\nResultado: {:?}", &greedly_numbers, max_sum(greedly_numbers.clone())); // ! -> 5
+    
+    let greedly_numbers = vec![5, -2, 3, -8, 4];
+    println!("\n------- Ejemplo 2: --------- ");
+    println!("\nPrueba de la funcion: \nValores del array 1: {:?}\nResultado: {:?}", &greedly_numbers, max_sum(greedly_numbers.clone())); // ! -> 6
+    
+    let greedly_numbers = vec![3, -4, 4, -3, 5, -9];
+    println!("\n------- Ejemplo 3: --------- ");
+    println!("\nPrueba de la funcion: \nValores del array 1: {:?}\nResultado: {:?}", &greedly_numbers, max_sum(greedly_numbers.clone())); // ! -> 6
+
+    println!("\n------- Prueba ejercicio increasing_triplet del capitulo 20 --------- ");
+    let stock_prices = vec![22.0, 25.0, 21.0, 18.0, 19.6, 17.0, 16.0, 20.5];
+    println!("\n------- Ejemplo 1: --------- ");
+    println!("\nPrueba de la funcion: \nValores del array: {:?}\nResultado: {:?}", &stock_prices, increasing_triplet(stock_prices.clone())); // ! -> true
+
+    let stock_prices = vec![5, 2, 8, 4, 3, 7];
+    println!("\n------- Ejemplo 2: --------- ");
+    println!("\nPrueba de la funcion: \nValores del array: {:?}\nResultado: {:?}", &stock_prices, increasing_triplet(stock_prices.clone())); // ! -> true
+
+    let stock_prices = vec![8, 9, 7, 10];
+    println!("\n------- Ejemplo 3: --------- ");
+    println!("\nPrueba de la funcion: \nValores del array: {:?}\nResultado: {:?}", &stock_prices, increasing_triplet(stock_prices.clone())); // ! -> true
+
+    println!("\n------- Prueba ejercicio anagram_checker del capitulo 20 --------- ");
+    let word_1 = String::from("rattles");
+    let word_2 = String::from("startle");
+    
+    println!("\n------- Prueba ejercicio anagram_checker, funcion are_anagrams --------- ");
+    println!("\nPrueba de la funcion: \nPalabra 1: {}\nPalabra 1: {}\n¿Son anagramas?: {}", &word_1, &word_2, are_anagrams(word_1.clone(), word_2.clone()));
+    
+    let word_3 = String::from("starle");
+    println!("\n------- Prueba ejercicio anagram_checker, funcion are_anagrams_2 --------- ");
+    println!("\nPrueba de la funcion: \nPalabra 1: {}\nPalabra 1: {}\n¿Son anagramas?: {}", &word_1, &word_3, are_anagrams_2(word_1.clone(), word_3.clone()));
+
+
+    println!("\n------- Prueba ejercicio group_sorting del capitulo 20 --------- ");
+
+    let letters_1 = vec!['d', 'd', 'd', 'c', 'c', 'c', 'a', 'a', 'a', 'b', 'b', 'b'];
+    let letters_2 = vec!['d', 'd', 'd', 'c', 'c', 'c', 'a', 'a', 'a', 'b', 'b', 'b'];
+    println!("\nPrueba de la funcion: \nValores desordenados: {:?}\nValores ordenados: {:?}", &letters_1, group_array(letters_1.clone()));
+    println!("\nPrueba de la funcion: \nValores desordenados: {:?}\nValores ordenados: {:?}", &letters_2, group_array(letters_2.clone()));
 }
