@@ -1,9 +1,15 @@
+use std::io;
+
 use ds_and_algorithms::algorithms::Algorithms;
+use ds_and_algorithms::ds::graph::test_vertices;
+use ds_and_algorithms::ds::graph::weighted_graphs::test_2_weighted_graph;
+use ds_and_algorithms::ds::heap::test_heap;
 use ds_and_algorithms::ds::node_base::{test_double_ll, test_ll, test_search_binary_tree};
 use ds_and_algorithms::ds::queue::{Queue, QueueTrait};
 use ds_and_algorithms::ds::stack::{Stack, StackTrait};
+use ds_and_algorithms::ds::tries::{Trie, TrieT};
 use ds_and_algorithms::examples::{
-    test_example_ch13, test_example_ch14, test_examples_ch12, test_exercise_launch_starcraft_ch10, test_exercises_ch11, test_find_directories, test_linter, test_print_manager
+    test_example_ch13, test_example_ch14, test_example_ch20, test_examples_ch12, test_exercise_launch_starcraft_ch10, test_exercises_ch11, test_find_directories, test_linter, test_print_manager
 };
 use ds_and_algorithms::exercises::test_exercise_4_chapter_9;
 use ds_and_algorithms::exercises::{
@@ -112,20 +118,20 @@ fn test_exercises() {
 
     // test_exercise_4_ch10();
 
-    println!("\n ------- Solucion al ejercicio 1 del capitulo 11 --------- ");
-    test_exercise_1_ch11();
+    // println!("\n ------- Solucion al ejercicio 1 del capitulo 11 --------- ");
+    // test_exercise_1_ch11();
 
-    println!("\n ------- Solucion al ejercicio 2 del capitulo 11 --------- ");
-    test_exercise_2_ch11();
+    // println!("\n ------- Solucion al ejercicio 2 del capitulo 11 --------- ");
+    // test_exercise_2_ch11();
 
-    println!("\n ------- Solucion al ejercicio 3 del capitulo 11 --------- ");
-    test_exercise_3_ch11();
+    // println!("\n ------- Solucion al ejercicio 3 del capitulo 11 --------- ");
+    // test_exercise_3_ch11();
 
-    println!("\n ------- Solucion al ejercicio 4 del capitulo 11 --------- ");
-    test_exercise_4_ch11();
+    // println!("\n ------- Solucion al ejercicio 4 del capitulo 11 --------- ");
+    // test_exercise_4_ch11();
 
-    println!("\n ------- Solucion al ejercicio 5 del capitulo 11 --------- ");
-    test_exercise_5_ch11();
+    // println!("\n ------- Solucion al ejercicio 5 del capitulo 11 --------- ");
+    // test_exercise_5_ch11();
 }
 
 fn test_ds() {
@@ -151,8 +157,35 @@ fn test_ds() {
     // println!("\n ------- Implementacion de una lista doblemente ligada --------- ");
     // test_double_ll();
 
-    println!("\n ------- Implementacion de un arbol de busqueda binaria --------- ");
-    test_search_binary_tree();
+    // println!("\n ------- Implementacion de un arbol de busqueda binaria --------- ");
+    // test_search_binary_tree();
+
+    // println!("\n ------- Implementacion de un heap --------- ");
+    // test_heap();
+
+    // println!("\n ------- Implementacion de un Trie Search --------- ");
+    // let mut trie = Trie::new();
+    
+    // let names = vec!["Peluche", "Peluchon", "Peluchito", "eluche", "nenuco", "nenuquito", "nenucon", "Sandia", "can", "cat"];
+    
+    // for i in 0..names.len() - 1 {
+    //     trie.insert(names[i]);
+    // }
+
+    // println!("Valores en el array para la practica: {:?}", &names);
+
+    // println!("\n ------- Prueba de Autocompletado  --------- ");
+    // println!("{:?}", trie.autocomplete("Pel"));
+
+    // println!("\n ------- Prueba de Autocorrector  --------- ");
+    // println!("{:?}", trie.autocomplete("elu"));
+
+
+    // println!("\n ------- Prueba struct Vertices --------- ");
+    // test_vertices();
+
+    println!("\n ------- Prueba struct Vertices con peso --------- ");
+    test_2_weighted_graph();
 }
 
 fn test_examples() {
@@ -167,18 +200,19 @@ fn test_examples() {
 
     // println!("\n ------- Prueba del ejemplo de lanzamiento de cohete --------- ");
     // test_exercise_launch_starcraft_ch10();
-
+    
     // test_exercises_ch11();
     // test_examples_ch12();
     // test_example_ch13();
-    test_example_ch14();
+    // test_example_ch14();
+    test_example_ch20();
 }
 
 fn main() {
     // test_algorithms();
     // test_exercises();
-    test_ds();
-    // test_examples();
+    // test_ds();
+    test_examples();
 }
 
 // fn read_input(user_input: &mut String) -> Result<usize, io::Error> {
