@@ -8,6 +8,7 @@ pub mod chapter_13;
 pub mod chapter_15;
 pub mod chapter_17;
 pub mod chapter_18;
+pub mod chapter_20;
 
 use crate::exercises::chapter_8::{
     first_non_duplicated, get_duplicates, intersection, missing_letter,

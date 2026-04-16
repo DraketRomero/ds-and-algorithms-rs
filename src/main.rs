@@ -11,6 +11,7 @@ use ds_and_algorithms::ds::tries::{Trie, TrieT};
 use ds_and_algorithms::examples::{
     test_example_ch13, test_example_ch14, test_example_ch20, test_examples_ch12, test_exercise_launch_starcraft_ch10, test_exercises_ch11, test_find_directories, test_linter, test_print_manager
 };
+use ds_and_algorithms::exercises::chapter_20::test_exercises_20;
 use ds_and_algorithms::exercises::test_exercise_4_chapter_9;
 use ds_and_algorithms::exercises::{
     factorial, test_exercise_1_ch8, test_exercise_1_ch11, test_exercise_2_ch8,
@@ -132,6 +133,9 @@ fn test_exercises() {
 
     // println!("\n ------- Solucion al ejercicio 5 del capitulo 11 --------- ");
     // test_exercise_5_ch11();
+
+    println!("\n ------- Solucion a los ejercicios del capitulo 20 --------- ");
+    test_exercises_20();
 }
 
 fn test_ds() {
@@ -205,14 +209,14 @@ fn test_examples() {
     // test_examples_ch12();
     // test_example_ch13();
     // test_example_ch14();
-    test_example_ch20();
+    // test_example_ch20();
 }
 
 fn main() {
     // test_algorithms();
-    // test_exercises();
+    test_exercises();
     // test_ds();
-    test_examples();
+    // test_examples();
 }
 
 // fn read_input(user_input: &mut String) -> Result<usize, io::Error> {
